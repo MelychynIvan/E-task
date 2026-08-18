@@ -25,6 +25,10 @@ Before making product or architecture changes, read:
 
 The repository documentation is intentionally designed so a fresh Codex session does **not** need the original ChatGPT conversation to understand the app.
 
+## Windows installer
+
+Run `npm run desktop:build` on Windows to create the NSIS installer. Tagged versions are built and published automatically by `.github/workflows/release.yml`; see [`docs/RELEASES.md`](./docs/RELEASES.md).
+
 ## Development status
 
 Initial application scaffold is being developed on `codex/initial-app-scaffold` in draft PR #1.
