@@ -8,10 +8,10 @@ import {
   Pause,
   Settings,
   Sparkles,
-  Target,
   Trash2,
   Trophy,
 } from "lucide-react";
+import { UpdateControl } from "./features/updater/UpdateControl";
 
 const navItems = [
   { label: "Home", icon: Home, active: true },
@@ -40,7 +40,7 @@ function App() {
     <main className="app-shell">
       <header className="topbar">
         <div className="brand">
-          <div className="brand-mark"><Target size={18} /></div>
+          <img className="brand-mark" src="/app-icon.svg" alt="" />
           <div>
             <strong>E-task</strong>
             <span>Focus. Time. Progress.</span>
@@ -56,7 +56,10 @@ function App() {
           ))}
         </nav>
 
-        <button className="quick-add"><Sparkles size={17} /> Quick add</button>
+        <div className="topbar-actions">
+          <UpdateControl />
+          <button className="quick-add"><Sparkles size={17} /> Quick add</button>
+        </div>
       </header>
 
       <section className="dashboard-grid">

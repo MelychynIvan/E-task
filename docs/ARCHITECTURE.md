@@ -392,7 +392,16 @@ UI should translate technical failures into concise user-facing messages.
 
 Do not silently swallow persistence failures.
 
-## 14. Testing strategy
+## 14. Windows distribution and update boundary
+
+- Tauri produces a per-user NSIS installer on a Windows GitHub Actions runner.
+- `tauri-action` publishes the installer, signed update archive, signature, and `latest.json` to GitHub Releases.
+- The frontend updater plugin checks the static release manifest; the process plugin restarts only after a verified update installs.
+- Update signatures and Windows executable signing are separate concerns. The updater private key stays outside Git and is injected only as a repository secret.
+- User SQLite data lives outside the installed application bundle and must remain untouched by install/update replacement.
+- Release versions are synchronized across npm, Cargo, and Tauri configuration using `scripts/set-version.mjs`.
+
+## 15. Testing strategy
 
 Priority order:
 
@@ -412,7 +421,7 @@ Critical test cases:
 - restart restores valid timer state
 - yearly analytics remain historically separated
 
-## 15. Performance rules
+## 16. Performance rules
 
 - No unnecessary polling.
 - No write-every-second timer persistence.
@@ -421,7 +430,7 @@ Critical test cases:
 - Query only the data needed for each view.
 - Measure before adding caching complexity.
 
-## 16. Decision rule for Codex
+## 17. Decision rule for Codex
 
 Before introducing a new architectural abstraction, dependency, background service, or database table, Codex should ask:
 

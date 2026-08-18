@@ -92,3 +92,11 @@ This is the chronological decision log for confirmed product and architecture ch
 - Current implementation direction: **Tauri 2 + React + TypeScript + Vite + SQLite**.
 - Working product name in code may remain `E-task` until final naming is approved.
 - Repository documentation must be sufficient for a fresh Codex session to understand the product without access to the original chat.
+
+## 2026-08-18 — Windows distribution and updates
+
+- E-task is distributed as a per-user NSIS Windows installer built by GitHub Actions.
+- Application versions follow SemVer and are published as GitHub Releases.
+- Installed apps check the latest GitHub Release manifest and may download/install signed updates without losing local SQLite data.
+- Updater packages must be cryptographically signed; the private key is stored only as a GitHub repository secret and in a secure offline backup.
+- The approved application icon uses the yellow focus/lightning/check motif on a near-black rounded square.

@@ -7,11 +7,17 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build",
+    "icon": "tauri icon public/app-icon.svg",
+    "version:set": "node scripts/set-version.mjs"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-process": "^2",
     "@tauri-apps/plugin-sql": "^2",
+    "@tauri-apps/plugin-updater": "^2",
     "lucide-react": "^0.468.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
